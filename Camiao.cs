@@ -8,6 +8,11 @@ namespace ND_Auto
 {
     public class Camiao : Veiculo
     {
-        //comment
+        private int pesoMaximo;
+        public int PesoMaximo
+        {
+            get { return pesoMaximo; }
+            set { pesoMaximo = value; }
+        }
     }
 }

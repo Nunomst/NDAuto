@@ -8,5 +8,11 @@ namespace ND_Auto
 {
     public class Mota : Veiculo 
     {
+        private string cilindrada;
+        public string Cilindrada
+        {
+            get { return cilindrada; }
+            set { cilindrada = value; }
+        }
     }
 }
