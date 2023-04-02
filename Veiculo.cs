@@ -99,6 +99,39 @@ namespace ND_Auto
             }
             return false;
         }
+
+        public Veiculo()
+        {
+            this.matricula = "XX-XX-XX";
+            this.marca = "NN";
+            this.modelo = "NN";
+            this.ano = default(DateTime);
+            this.kms = 0;
+            this.higiene = false;
+            this.estado = "NN";
+        }
+
+        public Veiculo(string matricula, string marca, string modelo, DateTime ano, int kms, bool higiene, string estado)
+        {
+            this.Matricula = matricula;
+            this.Marca = marca;
+            this.Modelo = modelo;
+            this.Ano = ano;
+            this.Kms = kms;
+            this.Higiene = higiene;
+            this.Estado = estado;
+        }
+
+        public Veiculo(Veiculo v)
+        {
+            this.Matricula = v.Matricula;
+            this.Marca = v.Marca;
+            this.Modelo = v.Modelo;
+            this.Ano = v.Ano;
+            this.Kms = v.Kms;
+            this.Higiene = v.Higiene;
+            this.Estado = v.Estado;
+        }
     }
 
 

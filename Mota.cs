@@ -14,5 +14,20 @@ namespace ND_Auto
             get { return cilindrada; }
             set { cilindrada = value; }
         }
+
+        public Mota()
+        {
+            this.cilindrada = "NN";
+        }
+
+        public Mota(string cilindrada)
+        {
+            this.Cilindrada = cilindrada;
+        }
+
+        public Mota(Mota m)
+        {
+            this.Cilindrada = m.Cilindrada;
+        }
     }
 }

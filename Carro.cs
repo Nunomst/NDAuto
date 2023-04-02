@@ -38,5 +38,26 @@ namespace ND_Auto
             get { return combustivel; }
             set { combustivel = value; }
         }
+
+        public Carro()
+        {
+            this.numeroPortas = 0;
+            this.caixa = "NN";
+            this.combustivel = "NN";
+        }
+
+        public Carro(int numeroPortas, string caixa, string combustivel)
+        {
+            this.NumeroPortas = numeroPortas;
+            this.Caixa = caixa;
+            this.Combustivel = combustivel;
+        }
+
+        public Carro(Carro c)
+        {
+            this.NumeroPortas = c.NumeroPortas;
+            this.Caixa = c.Caixa;
+            this.Combustivel = c.Combustivel;
+        }
     }
 }

@@ -14,5 +14,20 @@ namespace ND_Auto
             get { return pesoMaximo; }
             set { pesoMaximo = value; }
         }
+
+        public Camiao()
+        {
+            this.pesoMaximo = 0;
+        }
+
+        public Camiao(int pesoMaximo)
+        {
+            this.PesoMaximo = pesoMaximo;
+        }
+
+        public Camiao(Camiao c)
+        {
+            this.PesoMaximo = c.PesoMaximo;
+        }
     }
 }
