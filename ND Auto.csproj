@@ -49,6 +49,7 @@
     <Compile Include="Camiao.cs" />
     <Compile Include="Camioneta.cs" />
     <Compile Include="Carro.cs" />
+    <Compile Include="Empresa.cs" />
     <Compile Include="Mota.cs" />
     <Compile Include="Veiculo.cs" />
     <Compile Include="Form1.cs">
