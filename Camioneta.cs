@@ -18,6 +18,10 @@ namespace ND_Auto
                 {
                     numeroEixos = value; 
                 }
+                else
+                {
+                    throw new ArgumentException("Numero de eixos inválido!");
+                }
             }
         }
 
