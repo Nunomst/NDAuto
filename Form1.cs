@@ -48,7 +48,9 @@ namespace ND_Auto
 
         private void btn_adicionar_veiculo_Click(object sender, EventArgs e)
         {
-
+            emptyWindow1.Hide();
+            selecionarVeiculo1.Show();
+            selecionarVeiculo1.BringToFront();
         }
     }
 }

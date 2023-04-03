@@ -41,6 +41,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.emptyWindow1 = new ND_Auto.EmptyWindow();
+            this.selecionarVeiculo1 = new ND_Auto.SelecionarVeiculo();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -220,14 +222,31 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // emptyWindow1
+            // 
+            this.emptyWindow1.Location = new System.Drawing.Point(229, 67);
+            this.emptyWindow1.Name = "emptyWindow1";
+            this.emptyWindow1.Size = new System.Drawing.Size(1359, 816);
+            this.emptyWindow1.TabIndex = 2;
+            // 
+            // selecionarVeiculo1
+            // 
+            this.selecionarVeiculo1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.selecionarVeiculo1.Location = new System.Drawing.Point(229, 67);
+            this.selecionarVeiculo1.Name = "selecionarVeiculo1";
+            this.selecionarVeiculo1.Size = new System.Drawing.Size(1359, 816);
+            this.selecionarVeiculo1.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1587, 883);
+            this.Controls.Add(this.emptyWindow1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.selecionarVeiculo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -254,6 +273,8 @@
         private System.Windows.Forms.Button btn_simular_reserva;
         private System.Windows.Forms.Button btn_exportar_informacao;
         private System.Windows.Forms.Label label1;
+        private EmptyWindow emptyWindow1;
+        private SelecionarVeiculo selecionarVeiculo1;
     }
 }
 
