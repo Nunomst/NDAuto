@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ND_Auto
 {
@@ -70,34 +71,16 @@ namespace ND_Auto
         public string Estado
         {
             get { return estado; }
-            set { estado = value; }
-        }
-
-        private bool ValidarMatricula(string matricula)
-        {
-            if (matricula.Length != 8 || matricula[2] != '-' || matricula[5] != '-')
-            {
-                return false;
+            set {
+                  try{
+                        ValidarEstado(value);
+                        estado = value;
+                  }
+                  catch(ArgumentException ex)
+                  {
+                        MessageBox.Show(ex.Message);
+                  }
             }
-
-            //(99-AA-AA)
-            if (char.IsDigit(matricula[0]) && char.IsDigit(matricula[1]))
-            {
-                return char.IsLetter(matricula[3]) && char.IsLetter(matricula[4]) && char.IsLetter(matricula[6]) && char.IsLetter(matricula[7]);
-            }
-
-            //(AA-AA-99)
-            if (char.IsLetter(matricula[0]) && char.IsLetter(matricula[1]))
-            {
-                return char.IsLetter(matricula[3]) && char.IsLetter(matricula[4]) && char.IsDigit(matricula[6]) && char.IsDigit(matricula[7]);
-            }
-
-            //(AA-99-AA)
-            if (char.IsLetter(matricula[0]) && char.IsDigit(matricula[1]))
-            {
-                return char.IsDigit(matricula[3]) && char.IsDigit(matricula[4]) && char.IsLetter(matricula[6]) && char.IsLetter(matricula[7]);
-            }
-            return false;
         }
 
         public Veiculo()
@@ -132,7 +115,44 @@ namespace ND_Auto
             this.Higiene = v.Higiene;
             this.Estado = v.Estado;
         }
+        private bool ValidarMatricula(string matricula)
+        {
+            if (matricula.Length != 8 || matricula[2] != '-' || matricula[5] != '-')
+            {
+                return false;
+            }
+
+            //(99-AA-99)
+            //if (char.IsDigit(matricula[0]) && char.IsDigit(matricula[1]))
+            //{
+            //    return char.IsLetter(matricula[3]) && char.IsLetter(matricula[4]) && char.IsLetter(matricula[6]) && char.IsLetter(matricula[7]);
+            //}
+
+            if (char.IsDigit(matricula[0]) && char.IsDigit(matricula[1]) && char.IsLetter(matricula[3]) && char.IsLetter(matricula[4]) && char.IsDigit(matricula[6]) && char.IsDigit(matricula[7]))
+            {
+                return true;
+            }
+
+            //(AA-99-AA)
+            if (char.IsLetter(matricula[0]) && char.IsLetter(matricula[1]) && char.IsDigit(matricula[3]) && char.IsDigit(matricula[4]) && char.IsLetter(matricula[6]) && char.IsLetter(matricula[7]))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public string ValidarEstado(string estado)
+        {
+            string estadoDisponivel = "Disponível";
+            string estadoAlugado = "Alugado";
+            string estadoResevado = "Reservado";
+            string estadoManutencao = "Em Manutenção";
+
+            if(estado == estadoDisponivel){return estadoDisponivel;}
+            if(estado == estadoAlugado) { return estadoAlugado; }
+            if(estado == estadoResevado) { return estadoResevado; } 
+            if(estado == estadoManutencao) { return estadoManutencao; }
+            else { throw new ArgumentException("Estado Inválido!"); }
+        }
     }
-
-
 }

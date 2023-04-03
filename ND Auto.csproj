@@ -51,6 +51,7 @@
     <Compile Include="Carro.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Mota.cs" />
+    <Compile Include="Reserva.cs" />
     <Compile Include="Veiculo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
