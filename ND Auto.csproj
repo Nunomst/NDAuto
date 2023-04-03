@@ -46,10 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdicionarCarro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdicionarCarro.Designer.cs">
+      <DependentUpon>AdicionarCarro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Camiao.cs" />
     <Compile Include="Camioneta.cs" />
     <Compile Include="Carro.cs" />
     <Compile Include="Empresa.cs" />
+    <Compile Include="AdicionarVeiculoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdicionarVeiculoMenu.Designer.cs">
+      <DependentUpon>AdicionarVeiculoMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mota.cs" />
     <Compile Include="Veiculo.cs" />
     <Compile Include="Form1.cs">
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdicionarCarro.resx">
+      <DependentUpon>AdicionarCarro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdicionarVeiculoMenu.resx">
+      <DependentUpon>AdicionarVeiculoMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +112,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school-bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sedan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motorbike.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

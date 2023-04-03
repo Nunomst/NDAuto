@@ -45,5 +45,10 @@ namespace ND_Auto
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
+
+        private void btn_adicionar_veiculo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
